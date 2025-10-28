@@ -1,128 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Personal Portfolio - Anita Pandey</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://kit.fontawesome.com/74ea9753e4.js" crossorigin="anonymous"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Anita Pandey — Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/74ea9753e4.js" crossorigin="anonymous" defer></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header id="header">
-    <nav class="navbar">
-      <div class="logo">Welcome!</div>
-      <ul class="nav-links" id="sideMenu">
+  <!-- HEADER -->
+  <header id="header" class="site-header">
+    <nav class="nav container">
+      <div class="brand">
+        <a href="#header" class="logo">Anita Pandey</a>
+      </div>
+
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <i class="fas fa-moon" id="themeIcon"></i>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
         <li><a href="#header">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#portfolio">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
-        <i class="fas fa-times close-icon" onclick="closeMenu()"></i>
       </ul>
-      <i class="fas fa-bars menu-icon" onclick="openMenu()"></i>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+        <i class="fas fa-bars"></i>
+      </button>
     </nav>
-    <div class="intro">
-      <div class="intro-text">
-        <h1>Hi, I'm <span class="highlight">Anita Pandey</span></h1>
-        <h2>From Pithoragarh</h2>
+
+    <!-- Hero -->
+    <div class="hero container">
+      <div class="hero-left reveal">
+        <h1 class="hero-title">Hi, I'm <span class="name-highlight">Anita Pandey</span></h1>
+        <p class="hero-sub" id="typedText">Computer Science Student & Frontend Developer</p>
+        <p class="hero-desc">
+          B.Tech (CSE) • Graphic Era Hill University, Bhimtal.<br>
+          Passionate about creating beautiful and functional web interfaces.
+        </p>
+        <div class="hero-cta">
+          <a class="btn" href="#contact">Contact Me</a>
+          <a class="btn btn-outline" href="resume.pdf" download>Download Resume</a>
+        </div>
       </div>
-    </div>
+
+      
   </header>
 
-  <!-- About Section -->
-  <section id="about" class="section">
-    <div class="container">
-      <div class="about-img">
-        <img src="pic.png" alt="Anita's Image" />
-      </div>
-      <div class="about-content">
-        <h2>About Me</h2>
-        <p>I am a B.Tech CSE student from graphic Era Hill University ,Bhimatl(2022-26).I am passionate about learning new things.
-        </p>
-        <div class="tabs">
-          <button onclick="openTab('skills')" class="tab active">Skills</button>
-          <button onclick="openTab('education')" class="tab">Education</button>
+  <!-- MAIN -->
+  <main>
+    <!-- ABOUT -->
+    <section id="about" class="section container">
+      <div class="about-grid">
+        <div class="about-img reveal">
+          <img src="pic.png" alt="Anita Pandey portrait">
         </div>
-        <div class="tab-content active" id="skills">
-          <ul>
-            <li><strong>Front-End:</strong> HTML, CSS, JavaScript, React</li>
-            <li><strong>Back-End:</strong> PHP, JavaScript</li>
-          </ul>
-        </div>
-        <div class="tab-content" id="education">
-          <ul>
-            <li><strong>2026:</strong> BTech CSE - Graphic Era Hill University</li>
-            <li><strong>2022:</strong> Senior Secondary - The Asian Academy</li>
-            <li><strong>2020:</strong> Secondary School</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Services -->
-  <section id="services" class="section">
-    <h2 class="section-title">My Services</h2>
-    <div class="services-grid">
-      <div class="service-box">
-        <i class="fa-solid fa-code"></i>
-        <h3>Web Development</h3>
-        <p>Learning full-stack web development using modern technologies.</p>
-      </div>
-      <div class="service-box">
-        <i class="fa-solid fa-crop"></i>
-        <h3>UI/UX Design</h3>
-        <p>Basics of user interface and user experience design.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Portfolio -->
-  <section id="portfolio" class="section">
-    <h2 class="section-title">My Work</h2>
-    <div class="portfolio-grid">
-      <div class="portfolio-item">
-        <img src="project2.png" alt="Unscramble Game"/>
-        <div class="overlay">
-          <h3>Unscramble Game</h3>
-          <p>Guess the words using hints and colors.</p>
-        </div>
-      </div>
-      <div class="portfolio-item">
-        <div class="overlay">
-          <h3>Class Scheduler</h3>
-          <p>A dynamic weekly scheduler that lets students organize classes visually. Built with HTML/CSS/JS.
+        <div class="about-content reveal">
+          <h2>About Me</h2>
+          <p>
+            I'm a Computer Science Engineering student (B.Tech, 2022–26) at
+            <strong>Graphic Era Hill University, Bhimtal</strong>.
+            I love learning and experimenting with new technologies to enhance my
+            development skills.
           </p>
+
+          <div class="tabs">
+            <div class="tab-buttons">
+              <button class="tab active" data-target="skills">Skills</button>
+              <button class="tab" data-target="education">Education</button>
+            </div>
+
+            <div class="tab-content">
+              <div id="skills" class="tab-panel active">
+                <ul>
+                  <li><strong>Frontend:</strong> HTML, CSS, JavaScript, React</li>
+                  <li><strong>Backend:</strong> PHP, Node.js (Basics)</li>
+                  <li><strong>Database:</strong> MySQL</li>
+                  <li><strong>Tools:</strong> Git, GitHub, WordPress, Elementor, VS Code</li>
+                </ul>
+              </div>
+
+              <div id="education" class="tab-panel">
+                <ul>
+                  <li><strong>2022–2026:</strong> B.Tech (CSE) — Graphic Era Hill University, Bhimtal</li>
+                  <li><strong>2022:</strong> Senior Secondary — The Asian Academy</li>
+                  <li><strong>2020:</strong> Secondary School — The Asian Academy</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <a href="https://github.com/Anitapandey01" class="btn">See More</a>
-  </section>
+    </section>
 
-  <!-- Contact -->
-  <section id="contact" class="section">
-    <div class="contact-container">
-      <div class="contact-left">
-        <h2>Contact Me</h2>
-        <p><i class="fas fa-envelope"></i> anitaanu1904@gmail.com</p>
-        <p><i class="fas fa-phone"></i> 9756174356</p>
-        <div class="social-icons">
-          <a href="https://github.com/Anitapandey01"><i class="fab fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/anita-pandey"><i class="fab fa-linkedin"></i></a>
+    <!-- SERVICES -->
+    <section id="services" class="section section-alt">
+      <div class="container reveal">
+        <h2>Services</h2>
+        <p class="section-sub">What I can do</p>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <i class="fas fa-code service-icon"></i>
+            <h3>Web Development</h3>
+            <p>Building responsive and dynamic websites using HTML, CSS, JavaScript, and React.</p>
+          </article>
+
+          <article class="service-card">
+            <i class="fas fa-pencil-ruler service-icon"></i>
+            <h3>UI / UX Design</h3>
+            <p>Designing clean and user-friendly interfaces that prioritize accessibility and usability.</p>
+          </article>
+
+          <article class="service-card">
+            <i class="fas fa-database service-icon"></i>
+            <h3>Project Support</h3>
+            <p>Assisting with backend integration, Git version control, and project planning.</p>
+          </article>
         </div>
-        <a href="resume.pdf" download class="btn btn2">Download Resume</a>
       </div>
-      <div class="contact-right">
-        <form name="submit-to-google-sheet">
-          <input type="text" name="Full Name" placeholder="Your Full Name" required />
-          <input type="email" name="Email" placeholder="Your Email" required />
-          <textarea name="Message" rows="6" placeholder="Your Message" required></textarea>
-          <input type="submit" value="Send" />
-        </form>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <script src="script.js"></script>
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="section container">
+      <div class="reveal">
+        <h2>My Projects</h2>
+        <p class="section-sub">A few highlights from my GitHub</p>
+      </div>
+
+      <div class="portfolio-grid">
+        <figure class="project-card reveal">
+          <img src="project2.png" alt="Unscramble Game project screenshot">
+          <figcaption>
+            <h3>Unscramble Game</h3>
+            <p>A fun word puzzle game using DOM manipulation and JS logic.</p>
+            <a href="https://github.com/Anitapandey01" class="project-link" target="_blank">View on GitHub</a>
+          </figcaption>
+        </figure>
+
+        <figure class="project-card reveal">
+  <div class="compiler-slideshow">
+    <div class="slide active">
+      <img src="compiler1.png" alt="Compiler Image 1">
+    </div>
+    <div class="slide">
+      <img src="compiler2.png" alt="Compiler Image 2">
+    </div>
+    <div class="slide">
+      <img src="compiler3.png" alt="Compiler Image 3">
+    </div>
+
+    <!-- Navigation arrows -->
+    <button class="slide-btn prev" aria-label="Previous slide">&#10094;</button>
+    <button class="slide-btn next" aria-label="Next slide">&#10095;</button>
+  </div>
+
+  <figcaption>
+    <h3>AI-Assisted Compiler</h3>
+    <p>
+      An intelligent compiler assistant that optimizes code using AI-based suggestions
+      and detects potential errors for efficient programming.
+    </p>
+    <a href="https://github.com/Anitapandey01" class="project-link" target="_blank">View on GitHub</a>
+  </figcaption>
+</figure>
+      
+      
+    </section>
+
+    <div class="center">
+        <a class="btn" href="https://github.com/Anitapandey01" target="_blank">More Projects</a>
+      </div>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section section-alt">
+      <div class="container reveal">
+        <h2>Contact</h2>
+        <p class="section-sub">Let’s build something together!</p>
+
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h3>Get in Touch</h3>
+            <p><i class="fas fa-envelope"></i> <a href="mailto:anitaanu1904@gmail.com">anitaanu1904@gmail.com</a></p>
+            <p><i class="fas fa-phone"></i> <a href="tel:+919756174356">+91 97561 XXXXX</a></p>
+            <div class="socials">
+              <a href="https://github.com/Anitapandey01" target="_blank"><i class="fab fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/anita-pandey" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <a href="resume.pdf" class="btn btn-outline" download>Download Resume</a>
+          </div>
+
+          <div class="contact-form-card">
+            <form id="contactForm">
+              <input type="text" name="name" placeholder="Your full name" required>
+              <input type="email" name="email" placeholder="Your email" required>
+              <textarea name="message" rows="5" placeholder="Your message" required></textarea>
+              <button type="submit" class="btn">Send Message</button>
+              <p id="formMsg" class="form-msg"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Anita Pandey - Built with 💖 </p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
 </body>
 </html>
