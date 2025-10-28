@@ -60,7 +60,7 @@ Anita-portfolio/
 ## 📫 Contact
 
 - **Name:** Anita Pandey  
-- **Email:** [anitapandey01@gmail.com](mailto:anitapandey01@gmail.com)  
+- **Email:** [anitapandey01@gmail.com](mailto:anitaanu1904@gmail.com)  
 - **GitHub:** [Anitapandey01](https://github.com/Anitapandey01)
 
 ---
